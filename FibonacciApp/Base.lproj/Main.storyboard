@@ -1,22 +1,83 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="FibonacciApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fibonacci Sequence" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovz-7h-yP7">
+                                <rect key="frame" x="35" y="404" width="251" height="39"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="25"/>
+                                <color key="textColor" red="0.27851277372262773" green="0.67523950729927007" blue="0.8835253193" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Includes Zero?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nV4-mT-ZvX">
+                                <rect key="frame" x="16" y="451" width="132" height="31"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ikd-a1-l6Q">
+                                <rect key="frame" x="214" y="451" width="51" height="31"/>
+                                <color key="onTintColor" red="0.69773608576642332" green="0.80574247262773724" blue="0.9829400510204066" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="updateFibonacciSequence" destination="vXZ-lx-hvc" eventType="valueChanged" id="l3c-ih-eVn"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3x-1g-IX7">
+                                <rect key="frame" x="262" y="456" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                <color key="textColor" red="0.69773608580000002" green="0.80574247259999998" blue="0.98294005100000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Items in Sequence: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kf5-B1-Wvb">
+                                <rect key="frame" x="16" y="490" width="247" height="21"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0c-P9-php">
+                                <rect key="frame" x="262" y="490" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                <color key="textColor" red="0.69773608580000002" green="0.80574247259999998" blue="0.98294005100000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="2" maxValue="94" translatesAutoresizingMaskIntoConstraints="NO" id="bFX-hW-2k9">
+                                <rect key="frame" x="14" y="519" width="292" height="31"/>
+                                <color key="minimumTrackTintColor" red="0.69773608580000002" green="0.80574247259999998" blue="0.98294005100000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="updateFibonacciSequence" destination="vXZ-lx-hvc" eventType="valueChanged" id="HYf-Za-2Q8"/>
+                                </connections>
+                            </slider>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Display Current Fibonacci Sequence Here" translatesAutoresizingMaskIntoConstraints="NO" id="NH8-O6-oVn">
+                                <rect key="frame" x="35" y="20" width="251" height="376"/>
+                                <color key="backgroundColor" red="0.25283003826530615" green="0.25283003826530615" blue="0.25283003826530615" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.62947599517273634" green="0.86340082908163263" blue="0.6573905109489051" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2528300383" green="0.2528300383" blue="0.2528300383" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="includesZeroLabel" destination="U3x-1g-IX7" id="vd7-Am-zA0"/>
+                        <outlet property="includesZeroSwitch" destination="Ikd-a1-l6Q" id="uK6-bP-2sI"/>
+                        <outlet property="numberOfItemsLabel" destination="f0c-P9-php" id="WVb-BV-hCw"/>
+                        <outlet property="numberOfItemsSlider" destination="bFX-hW-2k9" id="YE5-PG-Oe4"/>
+                        <outlet property="textView" destination="NH8-O6-oVn" id="Woe-CW-REQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
